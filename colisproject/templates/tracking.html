@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    Tracking Package
+{% endblock %}
+
+{% block content %}
+
+    <form method="POST" class="space-y-2 mt-8 flex flex-col items-center ">
+
+        <!-- CSRF token permet de securiser le transfert des données entre le client et le serveur -->
+        {% csrf_token %}
+        <input class="border rounded p-1 border-white" type="text" name="tracking_number" id="tracking_number" placeholder=" tracking number ">
+   
+        <button class="bg-lime-300 rounded my-2 p-1 cursor-pointer" type="submit">Track the package</button>
+
+    </form>
+
+    {% if parcel %}
+        <h3>Result</h3>
+        <p class="text-center text-2xl">Number: {{ parcel.tracking_number }}</p>
+        <p class="text-center text-2xl">Status: {{ parcel.status }}</p>
+        <p class="text-center text-2xl">Weight: {{ parcel.Weight }}</p>
+    {% elif error %}
+        <p class="text-center text-2xl">Error: {{ error }} </p>
+    {% endif %}
+
+<a href="/" class="underline">Back to home</a>
+
+{% endblock %}

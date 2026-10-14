@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home - Package App
+{% endblock %}
+
+
+
+{% block content %}
+
+    
+    <p class="text-center mt-8 text-2xl">Welcome in our deliver website</p>
+    
+    {% if nb_colis < 2 %}
+        <p class="text-center"> You have {{nb_colis}} package </p>
+    {% else %}
+    <p>You have {{nb_colis}} packages</p>
+    
+    {% endif %}
+
+    <br>
+
+    <a href="register/" class="bg-green-200  p-1 rounded text-center">Add a new package</a>
+    <a href="tracking/" class="bg-yellow-200  p-1 rounded text-center">track a package</a>
+
+{% endblock %}
+
+ 

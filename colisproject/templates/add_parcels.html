@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Package Recording
+{% endblock %}
+
+{% block content %}
+
+<form method="POST" class="space-y-2 mt-8 flex flex-col items-center ">
+
+    <!-- CSRF token permet de securiser le transfert des données entre le client et le serveur -->
+     {% csrf_token %}
+    {{form}}
+   
+    <button class="bg-green-300 rounded my-2 p-1 cursor-pointer" type="submit">Record the package</button>
+    
+</form>
+
+<a href="/">Back to home</a>
+
+
+
+{% endblock %}

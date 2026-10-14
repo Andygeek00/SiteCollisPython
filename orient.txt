@@ -1,0 +1,3 @@
+stop time 54:00
+
+i must install dotenv
